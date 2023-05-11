@@ -60,6 +60,7 @@ public class Turret : MonoBehaviour
     {
         if (target == null)
         {
+            fireCountdown -= Time.deltaTime;
             return;
         }
 

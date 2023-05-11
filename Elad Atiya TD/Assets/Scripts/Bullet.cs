@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Transform target;
+    protected Transform target;
+    protected bool isInherited;
     public GameObject impactEffect;
+    public string enemyTag = "Enemy";
 
     public float speed = 30f;
 
     public void Seek(Transform _target)
     {
         target = _target;
+        transform.LookAt(target);
     }
 
     // Update is called once per frame
-    void Update()
+    virtual protected void Update()
     {
         if (target == null)
         {
@@ -32,16 +35,30 @@ public class Bullet : MonoBehaviour
             return;
         }
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+
+        //Quaternion lookRotation = Quaternion.LookRotation(dir);
+        //Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 15f).eulerAngles; //Lurp will allow smooth transition between targets
+        //transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        transform.LookAt(target);
     }
 
-    void HitTarget()
+    virtual protected void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(effectIns, 2f);
+        Destroy(effectIns, 7f);
+
+        if (!isInherited)
+        {
+            Damage(target);
+        }
 
         Destroy(gameObject);
-        Destroy(target.gameObject);
 
         return;
+    }
+
+    virtual protected void Damage(Transform enemy)
+    {
+        Destroy(enemy.gameObject);
     }
 }
