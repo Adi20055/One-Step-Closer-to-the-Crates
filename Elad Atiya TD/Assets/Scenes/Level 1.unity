@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4509275, g: 0.50081307, b: 0.5744931, a: 1}
+  m_IndirectSpecularColor: {r: 0.4509278, g: 0.50081414, b: 0.57449424, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10440,11 +10440,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standardTurret:
-    prefab: {fileID: 0}
-    cost: 0
+    prefab: {fileID: 1594701629921310636, guid: eb8ed1871a20ccc41b263b0ab17232a1, type: 3}
+    cost: 100
   missileLauncher:
-    prefab: {fileID: 0}
-    cost: 200
+    prefab: {fileID: 3073941864688184314, guid: bae1a0b83f6d7104180ddee931876310, type: 3}
+    cost: 250
 --- !u!1001 &1498672380
 PrefabInstance:
   m_ObjectHideFlags: 0

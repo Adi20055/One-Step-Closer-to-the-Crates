@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-    private turretBlueprint turretToBuild;
+    private TurretBlueprint turretToBuild;
 
     public static BuildManager instance;
     public GameObject standardTurretPrefab;
@@ -34,7 +34,7 @@ public class BuildManager : MonoBehaviour
         Debug.Log("Turret built! money left = " + playerStats.money);
     }
 
-   public void SelectTurretToBuild (turretBlueprint turret)
+   public void SelectTurretToBuild (TurretBlueprint turret)
     {
         turretToBuild = turret;
     }

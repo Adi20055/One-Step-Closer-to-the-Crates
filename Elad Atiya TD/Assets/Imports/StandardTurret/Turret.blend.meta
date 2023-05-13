@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Turret_GunMetal
-    second: {fileID: 2100000, guid: efe08bef27ada6f419ee7fb761a825e9, type: 2}
+    second: {fileID: 2100000, guid: 608f779ad7897444a8e7cca091f50b46, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Turret_Metal
-    second: {fileID: 2100000, guid: 44d90a20e9402574d8994c59ead4fb8a, type: 2}
+    second: {fileID: 2100000, guid: 9ab41a30c95894745af7eb5d26d4bf6b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Turret_Metal2
-    second: {fileID: 2100000, guid: 1ad8baa032dd6b64ebf1374424cab0ec, type: 2}
+    second: {fileID: 2100000, guid: 7818d1ad25ace1a41b0f9aaca46c662f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
