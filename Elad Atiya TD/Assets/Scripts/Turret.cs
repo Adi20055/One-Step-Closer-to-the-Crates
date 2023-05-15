@@ -9,14 +9,24 @@ public class Turret : MonoBehaviour
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
     public Transform partToRotate;
-    public GameObject bulletPrefab;
     public Transform firePoint;
     public float turnSpeed = 10f;
+
+    [Header("General")]
+    public float range = 15f;
+
+    [Header("Use Bullets (default)")]
+    public GameObject bulletPrefab;
+    public float fireRate = 1f;
     public float fireCountdown = 0f;
 
-    [Header("Attributes")]
-    public float range = 15f;
-    public float fireRate = 1f;
+    [Header("Use Laser")]
+    public bool useLaser = false;
+    public LineRenderer lineRenderer;
+    public ParticleSystem impactEffect;
+    public Light impactLight;
+    public float laserParticleOffset = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,24 +70,61 @@ public class Turret : MonoBehaviour
     {
         if (target == null)
         {
-            fireCountdown -= Time.deltaTime;
+            if (useLaser)
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                    impactEffect.Stop();
+                    impactLight.enabled = false;
+                }
+            }
+            else
+            {
+                fireCountdown -= Time.deltaTime;
+            }
             return;
         }
 
-        //Target lock on
+        LockOnTarget();
+
+        if (useLaser)
+        {
+            Laser();
+        }
+        else
+        {
+            if (fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+            fireCountdown -= Time.deltaTime;
+        }
+    }
+
+    void LockOnTarget()
+    {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles; //Lurp will allow smooth transition between targets
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
 
-        //Fire
-        if (fireCountdown <= 0f)
+    void Laser()
+    {
+        if (!lineRenderer.enabled)
         {
-            Shoot();
-            fireCountdown = 1f / fireRate;
+            lineRenderer.enabled = true;
+            impactEffect.Play();
+            impactLight.enabled = true;
         }
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
 
-        fireCountdown -= Time.deltaTime;
+        Vector3 dir = firePoint.position - target.position;
+        impactEffect.transform.position = target.position + dir.normalized * laserParticleOffset;
+        impactEffect.transform.rotation = Quaternion.LookRotation(dir);
     }
 
     void Shoot()

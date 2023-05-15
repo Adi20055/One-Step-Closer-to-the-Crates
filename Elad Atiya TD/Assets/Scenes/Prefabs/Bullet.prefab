@@ -140,4 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 691131763284350995, guid: 3dd2b91d141508f4ea0f575862065196, type: 3}
+  enemyTag: Enemy
   speed: 60
+  damage: 40

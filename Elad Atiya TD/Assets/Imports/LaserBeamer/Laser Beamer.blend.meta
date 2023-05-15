@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 390078b264e91434588f5b65451693b6
+guid: 69238e98ef83aff44a4db29262cc40b3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,18 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Turret_GunMetal
-    second: {fileID: 2100000, guid: efe08bef27ada6f419ee7fb761a825e9, type: 2}
+      name: Bolts
+    second: {fileID: 2100000, guid: 0601165335bdce940a0459f772e12465, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Turret_Metal
-    second: {fileID: 2100000, guid: 44d90a20e9402574d8994c59ead4fb8a, type: 2}
+      name: Main Turret
+    second: {fileID: 2100000, guid: 1ff54351bf965114099ee50ccb963678, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Turret_Metal2
-    second: {fileID: 2100000, guid: 1ad8baa032dd6b64ebf1374424cab0ec, type: 2}
+      name: Pipe
+    second: {fileID: 2100000, guid: e5f94de7691dc9d47aefb1cdf40505ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stand
+    second: {fileID: 2100000, guid: f064e538d8659274fba6590f4fd0e49b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Turret Accent
+    second: {fileID: 2100000, guid: 6e61279ceec73c54382813f05f90081b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -46,10 +56,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 4
+    globalScale: 0.6
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -80,8 +90,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 38
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
@@ -100,7 +110,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 4
+    globalScale: 0.6
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1

@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     public string enemyTag = "Enemy";
 
     public float speed = 30f;
+    public int damage = 50;
 
     public void Seek(Transform _target)
     {
@@ -57,8 +58,13 @@ public class Bullet : MonoBehaviour
         return;
     }
 
-    virtual protected void Damage(Transform enemy)
+    virtual protected void Damage(Transform enemyGo)
     {
-        Destroy(enemy.gameObject);
+        Enemy enemy = enemyGo.GetComponent<Enemy>();
+
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
     }
 }
