@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 691131763284350995, guid: c98871a9faa7eb343b5403c501e8b647, type: 3}
   enemyTag: Enemy
-  speed: 30
-  damage: 50
-  explosionRadius: 5
+  speed: 40
+  damage: 60
+  explosionRadius: 10
 --- !u!1 &7539873328423867908
 GameObject:
   m_ObjectHideFlags: 0

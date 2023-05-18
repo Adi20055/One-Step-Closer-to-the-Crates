@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2119598944152612118}
-  - component: {fileID: 1821616838313083889}
+  - component: {fileID: 5142355977005690812}
   m_Layer: 0
   m_Name: StandardTurret
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1821616838313083889
+--- !u!114 &5142355977005690812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,17 +42,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1594701629921310636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4e525ff0da1ec043970154a8f3d1adb, type: 3}
+  m_Script: {fileID: 11500000, guid: 83868f0f05aa77b46a6f4cd5983952bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrayIndex: 0
   enemyTag: Enemy
   partToRotate: {fileID: 7327503181217112579}
-  bulletPrefab: {fileID: 7881283856936809730, guid: 405bf1755969bd445ab905f0bc334c3d, type: 3}
   firePoint: {fileID: 257948943845967809}
+  bulletPrefab: {fileID: 7881283856936809730, guid: 405bf1755969bd445ab905f0bc334c3d, type: 3}
   turnSpeed: 10
-  fireCountdown: 0
-  range: 15
   fireRate: 1
+  fireCountdown: 0
+  RangeArr: 140000001e00000023000000
 --- !u!1 &1717007766821382331
 GameObject:
   m_ObjectHideFlags: 0

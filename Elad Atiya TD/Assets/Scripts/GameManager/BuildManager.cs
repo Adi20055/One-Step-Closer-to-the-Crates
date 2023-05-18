@@ -9,6 +9,7 @@ public class BuildManager : MonoBehaviour
 
     public TurretUI turretUI;
     public GameObject buildEffect;
+    public GameObject upgradeEffect;
 
     void Awake()
     {
