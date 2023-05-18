@@ -72,7 +72,6 @@ public abstract class Turret : MonoBehaviour
         {
             range = RangeArr[++arrayIndex];
 
-
             return true;
         }
         return false;

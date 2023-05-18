@@ -5,17 +5,22 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     protected Transform target;
+    protected int damage = 50;
     protected bool isInherited;
     public GameObject impactEffect;
     public string enemyTag = "Enemy";
 
     public float speed = 30f;
-    public int damage = 50;
 
     public void Seek(Transform _target)
     {
         target = _target;
         transform.LookAt(target);
+    }
+
+    public void SetDamage(int _damage)
+    {
+        damage = _damage;
     }
 
     // Update is called once per frame

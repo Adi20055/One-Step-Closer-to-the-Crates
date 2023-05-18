@@ -5,10 +5,6 @@ using UnityEngine;
 public class Missile : Bullet
 {
     public float explosionRadius = 0f;
-    void OnEnable()
-    {
-        isInherited = true;
-    }
 
     // Update is called once per frame
     override protected void Update()

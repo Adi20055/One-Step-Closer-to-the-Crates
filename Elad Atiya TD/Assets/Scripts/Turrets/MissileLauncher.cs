@@ -6,8 +6,6 @@ public class MissileLauncher : BulletTurret
 {
     //[Header("Missile Launcher")]
     //public int[] ExplosionRadiusArr = new int[3];
-    //[HideInInspector]
-    //public Missile missileInstance;
 
     //protected override void Start()
     //{
@@ -23,7 +21,6 @@ public class MissileLauncher : BulletTurret
     //    }
     //    if (arrayIndex < ExplosionRadiusArr.Length - 1)
     //    {
-    //        missileInstance.explosionRadius = arrayIndex;
 
     //        return true;
     //    }

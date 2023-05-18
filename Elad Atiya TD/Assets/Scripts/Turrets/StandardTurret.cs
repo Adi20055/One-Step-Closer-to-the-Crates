@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class StandardTurret : BulletTurret
 {
-
+    //public int NumberOfShots = 1;
 }
