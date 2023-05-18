@@ -6053,7 +6053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286204748218433841, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -55.4144
+      value: -52.4635
       objectReference: {fileID: 0}
     - target: {fileID: 2286204748218433841, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -6061,7 +6061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286204748218433841, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.707212
+      value: -26.231781
       objectReference: {fileID: 0}
     - target: {fileID: 7482845450312458613, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_SizeDelta.y
@@ -10629,7 +10629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286204748218433841, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -56.0223
+      value: -53.3396
       objectReference: {fileID: 0}
     - target: {fileID: 2286204748218433841, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -10637,7 +10637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286204748218433841, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -28.011116
+      value: -26.66981
       objectReference: {fileID: 0}
     - target: {fileID: 7482845450312458613, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10647,6 +10647,18 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u05D9\u05D4\u05D9) \u05E8\u05D5\u05D0 \u05D9\u05D4\u05D9\u05D5\n$350
         (\u05D1\u05D5\u05D8 \u05D3\u05D9\u05DE\u05EA \u05D4\u05D6"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944050030054194914, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944050030054194914, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944050030054194914, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
@@ -12086,8 +12098,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 71.48407, y: 47.44809}
-  m_SizeDelta: {x: 1009.0319, y: 94.8969}
+  m_AnchoredPosition: {x: 71.48407, y: 44.899612}
+  m_SizeDelta: {x: 1009.0319, y: 89.7999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466469370
 MonoBehaviour:
@@ -12168,12 +12180,18 @@ MonoBehaviour:
   standardTurret:
     prefab: {fileID: 1594701629921310636, guid: eb8ed1871a20ccc41b263b0ab17232a1, type: 3}
     cost: 100
+    upgradedPrefab: {fileID: 8911958536430434865, guid: 12e1d7115ffdba9488995586863d23ec, type: 3}
+    upgradeCost: 150
   missileLauncher:
     prefab: {fileID: 3073941864688184314, guid: bae1a0b83f6d7104180ddee931876310, type: 3}
     cost: 250
+    upgradedPrefab: {fileID: 9212737008869017882, guid: 598007bc222314543b2cd4dd6826306c, type: 3}
+    upgradeCost: 200
   laserBeamer:
     prefab: {fileID: 6729644331869292360, guid: 97169624e07c47848986901822c9e6e6, type: 3}
     cost: 350
+    upgradedPrefab: {fileID: 3045942228388054739, guid: 608c3ebf3b3849942a21b169f919ccd0, type: 3}
+    upgradeCost: 250
 --- !u!1001 &1498672380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13363,7 +13381,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590744846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -13784,7 +13802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2d4a192a6edb541abba538b61c0d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
+  startMoney: 1000
   startLives: 20
 --- !u!114 &1619160999
 MonoBehaviour:
@@ -15324,7 +15342,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -17679,7 +17697,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -17700,7 +17718,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2101076060}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1238912495}
+        m_TargetAssemblyTypeName: TurretUI, Assembly-CSharp
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2101076060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18122,7 +18152,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137594187}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -18421,7 +18451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286204748218433841, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -55.6869
+      value: -52.736
       objectReference: {fileID: 0}
     - target: {fileID: 2286204748218433841, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -18429,7 +18459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286204748218433841, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.8435
+      value: -26.3681
       objectReference: {fileID: 0}
     - target: {fileID: 7482845450312458613, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -18437,7 +18467,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8944050030054194914, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_Text
-      value: "turret-\u05D4 \u05D0\u05DC\n$100 \u05D5\u05E0\u05D0\u05D5\u05D1 \u05D9\u05DB\u05D4"
+      value: "\u05E7\u05E9\u05E0\u05D4 \u05D0\u05DC\n$100 \u05D5\u05E0\u05D0\u05D5\u05D1
+        \u05D9\u05DB\u05D4"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
