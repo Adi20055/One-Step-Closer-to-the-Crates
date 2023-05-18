@@ -15,10 +15,6 @@ public class GameState : MonoBehaviour
         {
             return;
         }
-        if(Input.GetKeyDown("e"))
-        {
-            EndGame();
-        }
         if (PlayerStats.Lives <= 0)
         {
             EndGame();

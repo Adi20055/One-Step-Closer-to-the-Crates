@@ -3,9 +3,11 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     private TurretBlueprint turretToBuild;
+    private Node selectedTurret;
 
     public static BuildManager instance;
 
+    public TurretUI turretUI;
     public GameObject buildEffect;
 
     void Awake()
@@ -35,12 +37,31 @@ public class BuildManager : MonoBehaviour
 
         GameObject effect =  Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f);
+    }
 
-        Debug.Log("Turret built! money left = " + PlayerStats.Money);
+    public void SelectTurret (Node turret)
+    {
+        if (selectedTurret == turret)
+        {
+            DeselectTurret();
+            return;
+        }
+
+        selectedTurret = turret;
+        turretToBuild = null;
+
+        turretUI.SetTarget(turret);
+    }
+
+    public void DeselectTurret()
+    {
+        selectedTurret = null;
+        turretUI.Hide();
     }
 
    public void SelectTurretToBuild (TurretBlueprint turret)
     {
         turretToBuild = turret;
+        DeselectTurret();
     }
 }
