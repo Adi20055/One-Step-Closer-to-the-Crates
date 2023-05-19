@@ -8,6 +8,8 @@ public class TurretUI : MonoBehaviour
     public Text upgradeCost;
     public Button upgradeButton;
 
+    public Text sellValue;
+
     public GameObject ui;
 
     public void SetTarget(Node _target)
@@ -26,6 +28,8 @@ public class TurretUI : MonoBehaviour
             upgradeButton.interactable = false;
         }
 
+        sellValue.text = "$" + target.turretBlueprint.GetSellValue();
+
         ui.SetActive(true);
     }
 
@@ -37,6 +41,12 @@ public class TurretUI : MonoBehaviour
     public void Upgrade()
     {
         target.UpgradeTurret();
+        BuildManager.instance.DeselectTurret();
+    }
+
+    public void Sell()
+    {
+        target.SellTurret();
         BuildManager.instance.DeselectTurret();
     }
 }
