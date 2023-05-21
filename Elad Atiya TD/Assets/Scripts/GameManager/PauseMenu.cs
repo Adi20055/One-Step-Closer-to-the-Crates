@@ -34,8 +34,13 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Menu()
+    public void Save()
     {
-        Debug.Log("Go to menu.");
+        Debug.Log("Save game.");
+    }
+
+    public void Load()
+    {
+        Debug.Log("Load game.");
     }
 }
