@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     private Transform target;
     private int wavepointIndex = 0;
+    public GameObject enemyTexture;
 
     private Enemy enemy;
 
@@ -21,6 +22,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
+        enemyTexture.transform.LookAt(target);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
@@ -43,6 +45,7 @@ public class EnemyMovement : MonoBehaviour
     void EndPath()
     {
         PlayerStats.Lives--;
+        --WaveSpawner.enemiesAlive;
         Destroy(gameObject);
     }
 
