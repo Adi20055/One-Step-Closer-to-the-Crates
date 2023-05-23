@@ -52,6 +52,10 @@ public abstract class BulletTurret : Turret
 
     virtual protected void Shoot()
     {
+        if (target == null)
+        {
+            return;
+        }
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 

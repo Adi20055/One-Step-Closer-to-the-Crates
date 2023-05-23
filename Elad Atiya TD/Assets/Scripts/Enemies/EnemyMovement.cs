@@ -5,9 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
     private Transform target;
-    private int wavepointIndex = 0;
+    private int waypointIndex = 0;
     public GameObject enemyTexture;
 
     private Enemy enemy;
@@ -33,13 +32,13 @@ public class EnemyMovement : MonoBehaviour
 
     void GetNextWaypoint()
     {
-        if (wavepointIndex >= Waypoints.waypoints.Length - 1)
+        if (waypointIndex >= Waypoints.waypoints.Length - 1)
         {
             EndPath();
             return;
         }
 
-        target = Waypoints.waypoints[++wavepointIndex];
+        target = Waypoints.waypoints[++waypointIndex];
     }
 
     void EndPath()

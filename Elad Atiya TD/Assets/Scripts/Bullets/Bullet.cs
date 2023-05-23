@@ -42,9 +42,6 @@ public class Bullet : MonoBehaviour
         }
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 
-        //Quaternion lookRotation = Quaternion.LookRotation(dir);
-        //Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 15f).eulerAngles; //Lurp will allow smooth transition between targets
-        //transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
         transform.LookAt(target);
     }
 

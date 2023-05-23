@@ -10,6 +10,5 @@ public class DataToSave
     public DataToSave()
     {
         highScore = PlayerStats.Highscore;
-        //check if highscore is highest score
     }
 }

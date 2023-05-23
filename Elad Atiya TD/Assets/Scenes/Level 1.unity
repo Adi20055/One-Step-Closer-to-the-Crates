@@ -14637,12 +14637,15 @@ MonoBehaviour:
   waves:
   - enemy: {fileID: 2229710932364400686, guid: 17b24c244279fdf4aac542d36a2569d5, type: 3}
     count: 1
-    rate: 2
+    rate: 1.5
   - enemy: {fileID: 2229710932364400686, guid: 17b24c244279fdf4aac542d36a2569d5, type: 3}
     count: 3
-    rate: 2
+    rate: 1.5
   - enemy: {fileID: 2229710932364400686, guid: 17b24c244279fdf4aac542d36a2569d5, type: 3}
     count: 5
+    rate: 1
+  - enemy: {fileID: 2229710932364400686, guid: a47a1decbe2340044b903b58930f408b, type: 3}
+    count: 10
     rate: 1
   spawnPoint: {fileID: 1975408062}
   waveCountdownText: {fileID: 1759466362}

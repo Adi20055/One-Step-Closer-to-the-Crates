@@ -7,6 +7,7 @@ public class WaveSpawner : MonoBehaviour
     public static int enemiesAlive;
     public static int enemiesKilled;
 
+    [Header("Wave Spawner")]
     public Wave[] waves;
     public Transform spawnPoint;
     public Text waveCountdownText;
@@ -14,6 +15,12 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
     private int waveIndex = 0;
+
+    void Start()
+    {
+        enemiesAlive = 0;
+        enemiesKilled = 0;
+    }
 
     // Update is called once per frame
     void Update()
@@ -48,7 +55,7 @@ public class WaveSpawner : MonoBehaviour
 
         if(++waveIndex == waves.Length)
         {
-            Debug.Log("YOU'VE WON!");
+            GameState.GameHasWon = true;
             this.enabled = false;
         }
     }

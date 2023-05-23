@@ -18,9 +18,9 @@ public class PlayerStats : MonoBehaviour
         Lives = startLives;
 
         Rounds = 0;
-        if (!SaveOrLoadScore.Load())
+        if (!DataOptions.Load())
         {
-            Highscore = 0;
+            DataOptions.ResetSaveData();
         }
     }
 }
