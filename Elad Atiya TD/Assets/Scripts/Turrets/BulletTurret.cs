@@ -4,16 +4,18 @@ using UnityEngine;
 
 public abstract class BulletTurret : Turret
 {
-    private int damage = 0;
+    protected int damage = 0;
     [Header("Unity Setup Fields")]
     public GameObject bulletPrefab;
+    [HideInInspector]
+    public int damageArrayIndex = 0;
 
     [Header("Bullet Stats")]
-    public int[] DamageArray = new int[3];
+    public int[] DamageUpgradeList = new int[3];
 
     override protected void Start()
     {
-        damage = DamageArray[arrayIndex];
+        damage = DamageUpgradeList[0];
         base.Start();
     }
 
@@ -37,20 +39,18 @@ public abstract class BulletTurret : Turret
 
     override public bool upgradeTurret()
     {
-        if (!base.upgradeTurret())
+        bool didUpgrade;
+        didUpgrade =  base.upgradeTurret();
+        if (damageArrayIndex < DamageUpgradeList.Length - 1)
         {
-            return false;
-        }
-        if (arrayIndex < DamageArray.Length)
-        {
-            damage = DamageArray[arrayIndex];
+            damage = DamageUpgradeList[++damageArrayIndex];
 
             return true;
         }
-        return false;
+        return didUpgrade;
     }
 
-    protected void Shoot()
+    virtual protected void Shoot()
     {
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();

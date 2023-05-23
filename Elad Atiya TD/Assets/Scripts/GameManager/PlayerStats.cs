@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static int Rounds;
+    public static int Highscore;
     public static int Money;
     public int startMoney = 400;
 
@@ -17,5 +18,9 @@ public class PlayerStats : MonoBehaviour
         Lives = startLives;
 
         Rounds = 0;
+        if (!SaveOrLoadScore.Load())
+        {
+            Highscore = 0;
+        }
     }
 }

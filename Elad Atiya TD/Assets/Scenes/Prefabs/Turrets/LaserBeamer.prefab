@@ -10054,21 +10054,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1afaf8774a62d48b1cc5368efcd2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrayIndex: 0
+  rangeArrayIndex: 0
   enemyTag: Enemy
   partToRotate: {fileID: 7696376432857421789}
   firePoint: {fileID: 7757620189703139746}
-  bulletPrefab: {fileID: 0}
-  turnSpeed: 10
   fireRate: 1
   fireCountdown: 0
-  RangeArr: 0a000000140000001e000000
-  damageOvertime: 30
-  slowPct: 0.5
+  RangeUpgradeList: 07000000
+  damageOverTimeArrayIndex: 0
   lineRenderer: {fileID: 2057108403287133676}
   impactEffect: {fileID: 2252306907940042063}
   impactLight: {fileID: 948610010888468950}
   laserParticleOffset: 0
+  DamageOverTimeUpgradeList: 1e0000002800000032000000
+  slowPct: 0.3
 --- !u!1 &7985892850247779197
 GameObject:
   m_ObjectHideFlags: 0

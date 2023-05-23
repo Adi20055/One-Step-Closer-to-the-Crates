@@ -4,27 +4,43 @@ using UnityEngine;
 
 public class MissileLauncher : BulletTurret
 {
-    //[Header("Missile Launcher")]
-    //public int[] ExplosionRadiusArr = new int[3];
+    protected int explosionRadius = 5;
 
-    //protected override void Start()
-    //{
+    [HideInInspector]
+    public int explosionRadiusArrayIndex = 0;
 
-    //    base.Start();
-    //}
+    [Header("Missile Launcher")]
+    public int[] ExplosionRadiusUpgradeList = new int[3];
 
-    //override public bool upgradeTurret()
-    //{
-    //    if (!base.upgradeTurret())
-    //    {
-    //        return false;
-    //    }
-    //    if (arrayIndex < ExplosionRadiusArr.Length - 1)
-    //    {
+    protected override void Start()
+    {
+        explosionRadius = ExplosionRadiusUpgradeList[0];
+        base.Start();
+    }
 
-    //        return true;
-    //    }
-    //    return false;
-    //}
+    override public bool upgradeTurret()
+    {
+        bool didUpgrade;
+        didUpgrade = base.upgradeTurret();
+        if (explosionRadiusArrayIndex < ExplosionRadiusUpgradeList.Length - 1)
+        {
+            explosionRadius = ExplosionRadiusUpgradeList[++explosionRadiusArrayIndex];
 
+            return true;
+        }
+        return didUpgrade;
+    }
+
+    protected override void Shoot()
+    {
+        GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Missile missile = bulletGO.GetComponent<Missile>();
+
+        if (missile != null)
+        {
+            missile.Seek(target);
+            missile.SetDamage(damage);
+            missile.SetExplosionRadius(explosionRadius);
+        }
+    }
 }

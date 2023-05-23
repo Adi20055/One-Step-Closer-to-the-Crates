@@ -109,11 +109,11 @@ public class Node : MonoBehaviour
 
     public void SellTurret()
     {
-        GameObject upgradeEffect;
+        GameObject sellEffect;
 
         PlayerStats.Money += turretBlueprint.GetSellValue();
-        upgradeEffect = Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
-        Destroy(upgradeEffect, 5f);
+        sellEffect = Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(sellEffect, 5f);
         Destroy(turret);
         turretBlueprint = null;
     }

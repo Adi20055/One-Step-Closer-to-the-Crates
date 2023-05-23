@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Missile : Bullet
 {
-    public float explosionRadius = 0f;
+    protected float explosionRadius = 0f;
 
     // Update is called once per frame
     override protected void Update()
@@ -14,6 +14,11 @@ public class Missile : Bullet
             FindNewTarget();
         }
         base.Update();
+    }
+
+    public void SetExplosionRadius(int _explosionRadius)
+    {
+        explosionRadius = _explosionRadius;
     }
 
     void FindNewTarget()

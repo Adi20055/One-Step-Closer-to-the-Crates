@@ -8,7 +8,7 @@ public abstract class Turret : MonoBehaviour
     protected Transform target;
     protected Enemy targetEnemy;
     [HideInInspector]
-    public int arrayIndex = 0;
+    public int rangeArrayIndex = 0;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
@@ -19,13 +19,13 @@ public abstract class Turret : MonoBehaviour
     protected float range = 0;
     public float fireRate = 1f;
     public float fireCountdown = 0f;
-    public int[] RangeArr = new int[3];
+    public int[] RangeUpgradeList = new int[3];
 
     // Start is called before the first frame update
     virtual protected void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.1f); //Calls the UpdateTarget function every 0.5 seconds
-        range = RangeArr[arrayIndex];
+        range = RangeUpgradeList[0];
     }
 
     protected void UpdateTarget()
@@ -68,9 +68,9 @@ public abstract class Turret : MonoBehaviour
 
     virtual public bool upgradeTurret()
     {
-        if (arrayIndex < RangeArr.Length - 1)
+        if (rangeArrayIndex < RangeUpgradeList.Length - 1)
         {
-            range = RangeArr[++arrayIndex];
+            range = RangeUpgradeList[++rangeArrayIndex];
 
             return true;
         }

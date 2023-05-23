@@ -45,15 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83868f0f05aa77b46a6f4cd5983952bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrayIndex: 0
+  rangeArrayIndex: 0
   enemyTag: Enemy
   partToRotate: {fileID: 7327503181217112579}
   firePoint: {fileID: 257948943845967809}
-  fireRate: 1
+  fireRate: 0.5
   fireCountdown: 0
-  RangeArr: 140000001e00000023000000
+  RangeUpgradeList: 0a0000000a0000000f000000
   bulletPrefab: {fileID: 7881283856936809730, guid: 405bf1755969bd445ab905f0bc334c3d, type: 3}
-  DamageArray: 0a000000140000001e000000
+  damageArrayIndex: 0
+  DamageUpgradeList: 190000001e00000023000000
+  numberOfShotsArrayIndex: 0
+  NumberOfShotsUpgradeList: 010000000200000003000000
 --- !u!1 &1717007766821382331
 GameObject:
   m_ObjectHideFlags: 0

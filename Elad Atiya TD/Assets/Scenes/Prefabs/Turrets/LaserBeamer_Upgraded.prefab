@@ -268,19 +268,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1afaf8774a62d48b1cc5368efcd2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrayIndex: 0
+  rangeArrayIndex: 0
   enemyTag: Enemy
   partToRotate: {fileID: 2156703166320825926}
   firePoint: {fileID: 2056379184858771513}
   fireRate: 1
   fireCountdown: 0
-  RangeArr: 32000000
-  damageOvertime: 60
-  slowPct: 0.7
+  RangeUpgradeList: 0f000000
+  damageOverTimeArrayIndex: 0
   lineRenderer: {fileID: 7758983890492083319}
   impactEffect: {fileID: 7521273885510628564}
   impactLight: {fileID: 8794123022207694925}
   laserParticleOffset: 0
+  DamageOverTimeUpgradeList: 46000000
+  slowPct: 0.5
 --- !u!1 &3148246525849967044
 GameObject:
   m_ObjectHideFlags: 0
