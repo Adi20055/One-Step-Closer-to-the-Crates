@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    public TurretBlueprint standardTurret;
-    public TurretBlueprint missileLauncher;
-    public TurretBlueprint laserBeamer;
+    public static TurretBlueprint standardTurret;
+    public static TurretBlueprint missileLauncher;
+    public static TurretBlueprint laserBeamer;
 
     BuildManager buildManager;
 
