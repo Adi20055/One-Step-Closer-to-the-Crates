@@ -2916,6 +2916,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 1316619189}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &341612899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,6 +2967,8 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+=======
+>>>>>>> parent of 29e69d3 (Updated Waves)
 =======
 >>>>>>> parent of 29e69d3 (Updated Waves)
 --- !u!1001 &352277603
@@ -4439,7 +4442,11 @@ RectTransform:
   m_AnchorMin: {x: 0.31421113, y: 0}
   m_AnchorMax: {x: 0.31421113, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 1.2299805, y: -15.767334}
+=======
+  m_AnchoredPosition: {x: 1.2299805, y: -15.767273}
+>>>>>>> parent of 29e69d3 (Updated Waves)
 =======
   m_AnchoredPosition: {x: 1.2299805, y: -15.767273}
 >>>>>>> parent of 29e69d3 (Updated Waves)
