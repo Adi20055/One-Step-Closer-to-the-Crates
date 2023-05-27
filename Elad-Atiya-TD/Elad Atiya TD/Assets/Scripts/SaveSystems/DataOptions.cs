@@ -15,11 +15,6 @@ public class DataOptions : MonoBehaviour
         if (data != null)
         {
             PlayerStats.Highscore = data.highScore;
-            //for (int i = 0; i < data.boardTurretStatus.Length; i++) //add another for upgrade array
-            //{
-            //    Nodes.turretTypeArr[i] =  data.boardTurretStatus[i];
-            //}
-
             return true;
         }
         return false;

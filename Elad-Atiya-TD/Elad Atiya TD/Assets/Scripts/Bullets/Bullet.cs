@@ -6,7 +6,6 @@ public class Bullet : MonoBehaviour
 {
     protected Transform target;
     protected int damage = 50;
-    protected bool isInherited;
     public GameObject impactEffect;
     public string enemyTag = "Enemy";
 
@@ -50,10 +49,7 @@ public class Bullet : MonoBehaviour
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 7f);
 
-        if (!isInherited)
-        {
-            Damage(target);
-        }
+        Damage(target);
 
         Destroy(gameObject);
 

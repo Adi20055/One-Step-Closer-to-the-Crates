@@ -3,32 +3,22 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
-    public static Node[] nodes;
-    public static int nodeIndex;
     private Renderer rend;
     private Color startColor;
-
-    //[HideInInspector]
-    private GameObject turret;
+    [HideInInspector]
+    public GameObject turret;
     [HideInInspector]
     public TurretBlueprint turretBlueprint;
     [HideInInspector]
     public bool isFullyUpgraded = false;
-    //[HideInInspector]
-    //public int turretType = -1;
-    //[HideInInspector]
-    //public int turretUpgradeType = -1;
 
-    [Header("Unity Setup Fields")]
+
     public Vector3 positionOffset;
+
     public Color hoverColor;
     public Color notEnoughMoneyColor;
-    BuildManager buildManager;
 
-    void Awake()
-    {
-        nodeIndex = 0;
-    }
+    BuildManager buildManager;
 
     void Start()
     {
@@ -36,7 +26,6 @@ public class Node : MonoBehaviour
         startColor = rend.material.color;
 
         buildManager = BuildManager.instance;
-        //nodes[nodeIndex++] = this;
     }
 
     public Vector3 GetBuildPosition()
@@ -85,20 +74,6 @@ public class Node : MonoBehaviour
 
         GameObject buildEffect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(buildEffect, 5f);
-
-        //if (turret.GetType() == typeof(StandardTurret))
-        //{
-        //    turretType = 1;
-        //}
-        //else if (turret.GetType() == typeof(MissileLauncher))
-        //{
-        //    turretType = 2;
-        //}
-        //else if (turret.GetType() == typeof(LaserBeamer))
-        //{
-        //    turretType = 3;
-        //}
-        //    turretUpgradeType = 0;
     }
 
     public void UpgradeTurret()
@@ -112,14 +87,10 @@ public class Node : MonoBehaviour
 
         GameObject upgradeEffect;
 
-        if (turret.GetComponent<Turret>().upgradeTurret() == true) //If stat upgrade is successful
+        if (turret.GetComponent<Turret>().upgradeTurret() == true)
         {
             upgradeEffect = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
             Destroy(upgradeEffect, 5f);
-            //if (turretType != -1)
-            //{
-            //    ++turretUpgradeType;
-            //}
             return;
         }
 
@@ -134,7 +105,6 @@ public class Node : MonoBehaviour
         Destroy(upgradeEffect, 5f);
 
         isFullyUpgraded = true;
-        //++turretUpgradeType;
     }
 
     public void SellTurret()
@@ -146,8 +116,6 @@ public class Node : MonoBehaviour
         Destroy(sellEffect, 5f);
         Destroy(turret);
         turretBlueprint = null;
-        //turretUpgradeType = -1;
-        //turretType = -1;
     }
 
     void OnMouseEnter()
@@ -175,40 +143,4 @@ public class Node : MonoBehaviour
     {
         rend.material.color = startColor;
     }
-
-    //public int GetTurretStatus()
-    //{
-    //    return turretType;
-    //}
-    //public int GetTurretUpgradeStatus()
-    //{
-    //    return turretUpgradeType;
-    //}
-
-    //public void LoadTurret()
-    //{
-    //    if (turret != null)
-    //    {
-    //        PlayerStats.Money -= turretBlueprint.cost;
-    //        SellTurret();
-    //    }
-
-    //    switch (turretType)
-    //    {
-    //        case 1:
-    //            PlayerStats.Money += Shop.standardTurret.cost;
-    //            BuildTurret(Shop.standardTurret);
-    //            break;
-    //        case 2:
-    //            PlayerStats.Money += Shop.missileLauncher.cost;
-    //            BuildTurret(Shop.missileLauncher);
-    //            break;
-    //        case 3:
-    //            PlayerStats.Money += Shop.laserBeamer.cost;
-    //            BuildTurret(Shop.laserBeamer);
-    //            break;
-    //        default:
-    //            break;
-    //    }
-    //}
 }
