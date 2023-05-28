@@ -15345,7 +15345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 2229710932364400686, guid: 17b24c244279fdf4aac542d36a2569d5, type: 3}
-    count: 10
+    count: 1
     rate: 1
   - enemy: {fileID: 2229710932364400686, guid: 17b24c244279fdf4aac542d36a2569d5, type: 3}
     count: 3
@@ -15419,7 +15419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2d4a192a6edb541abba538b61c0d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
+  startMoney: 100000
   startLives: 10
 --- !u!114 &1619160999
 MonoBehaviour:

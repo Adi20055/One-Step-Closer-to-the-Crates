@@ -741,6 +741,7 @@ GameObject:
   - component: {fileID: 7311016672076978362}
   - component: {fileID: 1498068650126896351}
   - component: {fileID: 4710226269644278735}
+  - component: {fileID: 8768671773454517356}
   m_Layer: 0
   m_Name: NormalEnemy
   m_TagString: Enemy
@@ -796,6 +797,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTexture: {fileID: 6486202860301075352}
+--- !u!135 &8768671773454517356
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2229710932364400686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2431269729063522608
 GameObject:
   m_ObjectHideFlags: 0

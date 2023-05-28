@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Missile : Bullet
 {
-    protected float explosionRadius = 0f;
+    public float explosionRadius = 0f;
 
     // Update is called once per frame
     override protected void Update()
@@ -39,6 +39,7 @@ public class Missile : Bullet
 
     void Explode()
     {
+        isInherited = true;
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)
         {
