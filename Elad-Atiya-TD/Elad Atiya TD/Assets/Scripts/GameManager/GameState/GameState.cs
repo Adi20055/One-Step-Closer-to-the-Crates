@@ -6,13 +6,15 @@ public class GameState : MonoBehaviour
 {
     [HideInInspector]
     public static bool GameHasWon;
-    private bool gameIsOver = false;
+    public static bool gameIsOver;
 
     public GameObject gameOverUI;
     public GameObject gameWonUI;
+    public DataOptions dataOptions;
 
     void Start()
     {
+        gameIsOver = false;
         GameHasWon = false;
     }
 

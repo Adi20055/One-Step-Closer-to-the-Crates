@@ -4,24 +4,42 @@ using UnityEngine;
 
 public class DataOptions : MonoBehaviour
 {
+    public PlayerStats playerStats;
+
+    void Start()
+    {
+        Load();
+    }
+
     public static void Save()
     {
         SaveSystem.SaveData();
     }
 
-    public static bool Load()
+    public void Load()
     {
         DataToSave data =  SaveSystem.LoadData();
-        if (data != null)
+        if (data == null)
         {
-            PlayerStats.Highscore = data.highScore;
-            return true;
+            return;
         }
-        return false;
+        PlayerStats.Highscore = data.highScore;
+        PlayerStats.Lives = data.currLives;
+        PlayerStats.Money = data.currMoney;
+        PlayerStats.Rounds = data.currRound;
+        WaveSpawner.LoadWave();
     }
-    public static void ResetSaveData()
+    public static void ResetHighscoreSaveData()
     {
         PlayerStats.Highscore = 0;
+
+        SaveSystem.SaveData();
+    }
+
+    public void ResetSaveData()
+    {
+        playerStats.resetPlayerStats();
+        WaveSpawner.ResetWave();
 
         SaveSystem.SaveData();
     }
@@ -30,8 +48,8 @@ public class DataOptions : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D))
         {
-            ResetSaveData();
-            Debug.Log("All Save Data Has Been Erased");
+            ResetHighscoreSaveData();
+            Debug.Log("Highscore Save Data Has Been Erased");
         }
     }
 }

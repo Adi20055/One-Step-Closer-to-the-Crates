@@ -20,7 +20,6 @@ public class GameOver : MonoBehaviour
         if (score > PlayerStats.Highscore)
         {
             PlayerStats.Highscore = score;
-            DataOptions.Save();
             highscoreText.text = "Congratulations\nNew Highscore!!!";
         }
         highscoreNumberText.text = PlayerStats.Highscore.ToString();
