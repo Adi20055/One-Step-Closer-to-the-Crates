@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class ImageFollowCursor : MonoBehaviour
+public class ImageFollower : MonoBehaviour
 {
     [HideInInspector]
-    public static ImageFollower selectedFollower;
-    public ImageFollower associatedFollower;
+    public static ImageFollowerComponent selectedFollower;
+    public ImageFollowerComponent associatedFollower;
 
     private void Start()
     {

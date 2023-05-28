@@ -31,7 +31,7 @@ public class TurretUI : MonoBehaviour
         sellValue.text = "$" + target.turretBlueprint.GetSellValue();
 
         ui.SetActive(true);
-        ImageFollowCursor.DeselectAllImages();
+        ImageFollower.DeselectAllImages();
     }
 
     public void Hide()

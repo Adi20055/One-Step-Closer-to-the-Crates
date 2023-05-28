@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ImageFollower : MonoBehaviour
+public class ImageFollowerComponent : MonoBehaviour
 {
     public float offsetDistance = 50f; // Distance between cursor and image
 
