@@ -18,9 +18,10 @@ public class PlayerStats : MonoBehaviour
         Lives = startLives;
 
         Rounds = 0;
-        if (!DataOptions.Load())
-        {
-            DataOptions.ResetSaveData();
-        }
+    }
+
+    public void resetPlayerStats()
+    {
+        Start();
     }
 }

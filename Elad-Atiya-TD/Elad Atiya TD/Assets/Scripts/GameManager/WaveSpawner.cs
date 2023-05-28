@@ -14,12 +14,13 @@ public class WaveSpawner : MonoBehaviour
 
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
-    private int waveIndex = 0;
+    private static int waveIndex = 0;
 
     void Start()
     {
         enemiesAlive = 0;
         enemiesKilled = 0;
+        waveIndex = 0;
     }
 
     // Update is called once per frame
@@ -43,11 +44,12 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        PlayerStats.Rounds++;
-
         Wave wave = waves[waveIndex];
+        PlayerStats.Rounds = waveIndex;
 
-        for(int i = 0; i < wave.count; i++)
+        DataOptions.Save(); //automatically save game state
+
+        for (int i = 0; i < wave.count; i++)
         {
             SpawnEnemy(wave.enemy);
             yield return new WaitForSeconds(1f / wave.rate);
@@ -58,6 +60,16 @@ public class WaveSpawner : MonoBehaviour
             GameState.GameHasWon = true;
             this.enabled = false;
         }
+    }
+
+    static public void LoadWave ()
+    {
+        waveIndex = PlayerStats.Rounds;
+    }
+
+    static public void ResetWave ()
+    {
+        waveIndex = 0;
     }
 
     void SpawnEnemy(GameObject enemy)

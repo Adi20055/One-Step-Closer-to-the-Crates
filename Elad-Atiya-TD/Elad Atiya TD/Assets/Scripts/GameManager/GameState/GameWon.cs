@@ -12,7 +12,7 @@ public class GameWon : MonoBehaviour
 
     private void OnEnable()
     {
-        int score = PlayerStats.Rounds;
+        int score = ++PlayerStats.Rounds;
 
         roundsText.text = score.ToString();
         highscoreText.text = "Highscore";
@@ -20,7 +20,6 @@ public class GameWon : MonoBehaviour
         if (score > PlayerStats.Highscore)
         {
             PlayerStats.Highscore = score;
-            DataOptions.Save();
             highscoreText.text = "Congratulations\nNew Highscore!!!";
         }
         highscoreNumberText.text = PlayerStats.Highscore.ToString();
