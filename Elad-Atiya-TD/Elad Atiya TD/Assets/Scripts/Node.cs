@@ -92,8 +92,7 @@ public class Node : MonoBehaviour
         upgradeEffect = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(upgradeEffect, 5f);
 
-        turretBlueprint.upgradeID++;
-        SetTurretUpgrade();
+        TurretUpgradeTrigger();
         NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
     }
 
@@ -147,10 +146,17 @@ public class Node : MonoBehaviour
         }
     }
 
-    public void SetTurretUpgrade()
+    public void TurretUpgradeTrigger()
     {
+        if(isFullyUpgraded)
+        {
+            return;
+        }
+
         if (turret.GetComponent<Turret>().upgradeTurret() == true) //If stat upgrade successful
         {
+            turretBlueprint.upgradeID++;
+            Debug.Log("Turret on node " + nodeID + " is upgraded to lvl " + turretBlueprint.upgradeID);
             return;
         }
 
@@ -162,6 +168,8 @@ public class Node : MonoBehaviour
         turret = _turret;
 
 
+        turretBlueprint.upgradeID++;
+        Debug.Log("(Max lvl) Turret on node " + nodeID + " is upgraded to lvl " + turretBlueprint.upgradeID);
         isFullyUpgraded = true;
     }
 
@@ -185,10 +193,11 @@ public class Node : MonoBehaviour
             return;
         }
 
+        Debug.Log("upgrade to lvl: " + upgradeID);
         AddTurret(turretID);
         for (int i = 0; i < upgradeID; i++)
         {
-            SetTurretUpgrade();
+            TurretUpgradeTrigger();
         }
     }
 }

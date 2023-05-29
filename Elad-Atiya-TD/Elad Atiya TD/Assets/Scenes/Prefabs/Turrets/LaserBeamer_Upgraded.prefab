@@ -274,14 +274,14 @@ MonoBehaviour:
   firePoint: {fileID: 2056379184858771513}
   fireRate: 1
   fireCountdown: 0
-  RangeUpgradeList: 0f000000
+  RangeUpgradeList: 11000000
   damageOverTimeArrayIndex: 0
   lineRenderer: {fileID: 7758983890492083319}
   impactEffect: {fileID: 7521273885510628564}
   impactLight: {fileID: 8794123022207694925}
   laserParticleOffset: 0
   DamageOverTimeUpgradeList: 46000000
-  slowPct: 0.5
+  slowPct: 0.6
 --- !u!1 &3148246525849967044
 GameObject:
   m_ObjectHideFlags: 0

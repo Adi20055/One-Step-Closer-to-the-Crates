@@ -36,7 +36,7 @@ public class DataOptions : MonoBehaviour
         }
 
         nodeData.UpdateNodeData();
-        Save();
+        //Save();
     }
 
     public void ResetHighscoreSaveData()

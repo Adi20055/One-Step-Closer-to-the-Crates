@@ -15,6 +15,11 @@ public class NodeData : MonoBehaviour
 
         turretIDs = new int[arraySize];
         upgradeIDs = new int[arraySize];
+        for (int i = 0; i < arraySize; i++)
+        {
+            turretIDs[i] = -1;
+            upgradeIDs[i] = 0;
+        }
         nodes = new Node[arraySize];
         nodes = GetComponentsInChildren<Node>();
     }

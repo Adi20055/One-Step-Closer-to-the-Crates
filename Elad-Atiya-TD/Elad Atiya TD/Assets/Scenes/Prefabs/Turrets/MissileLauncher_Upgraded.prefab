@@ -282,4 +282,4 @@ MonoBehaviour:
   damageArrayIndex: 0
   DamageUpgradeList: 32000000
   explosionRadiusArrayIndex: 0
-  ExplosionRadiusUpgradeList: 07000000
+  ExplosionRadiusUpgradeList: 0a000000

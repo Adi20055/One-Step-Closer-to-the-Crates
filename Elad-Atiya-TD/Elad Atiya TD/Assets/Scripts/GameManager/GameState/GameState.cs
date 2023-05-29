@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     [HideInInspector]
-    public static bool GameHasWon;
+    public static bool WinGame;
     public static bool gameIsOver;
 
     public GameObject gameOverUI;
@@ -15,7 +15,7 @@ public class GameState : MonoBehaviour
     void Start()
     {
         gameIsOver = false;
-        GameHasWon = false;
+        WinGame = false;
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class GameState : MonoBehaviour
         {
             EndGame();
         }
-        if (GameHasWon && WaveSpawner.enemiesAlive <= 0)
+        if (WinGame && WaveSpawner.enemiesAlive <= 0)
         {
             WonGame();
         }
@@ -38,14 +38,14 @@ public class GameState : MonoBehaviour
     void EndGame()
     {
         gameIsOver = true;
-
         gameOverUI.SetActive(true);
+        dataOptions.ResetSaveData();
     }
 
     public void WonGame()
     {
         gameIsOver = true;
-
         gameWonUI.SetActive(true);
+        dataOptions.ResetSaveData();
     }
 }
