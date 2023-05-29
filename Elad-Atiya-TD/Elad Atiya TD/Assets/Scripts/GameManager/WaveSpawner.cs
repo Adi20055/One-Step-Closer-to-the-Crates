@@ -6,6 +6,8 @@ public class WaveSpawner : MonoBehaviour
 {
     public static int enemiesAlive;
     public static int enemiesKilled;
+    [Header("Unity setup fields")]
+    public DataOptions dataOptions;
 
     [Header("Wave Spawner")]
     public Wave[] waves;
@@ -30,6 +32,7 @@ public class WaveSpawner : MonoBehaviour
         {
             return;
         }
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
@@ -47,7 +50,7 @@ public class WaveSpawner : MonoBehaviour
         Wave wave = waves[waveIndex];
         PlayerStats.Rounds = waveIndex;
 
-        DataOptions.Save(); //automatically save game state
+        dataOptions.Save(); //automatically save game state
 
         for (int i = 0; i < wave.count; i++)
         {

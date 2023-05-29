@@ -8,10 +8,12 @@ public class Node : MonoBehaviour
     [HideInInspector]
     public GameObject turret;
     [HideInInspector]
-    public TurretBlueprint turretBlueprint;
+    public TurretBlueprint turretBlueprint = null;
     [HideInInspector]
     public bool isFullyUpgraded = false;
 
+    public int nodeID;
+    public Shop shop;
 
     public Vector3 positionOffset;
 
@@ -69,8 +71,9 @@ public class Node : MonoBehaviour
 
         GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
-
         turretBlueprint = blueprint;
+
+        NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
 
         GameObject buildEffect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(buildEffect, 5f);
@@ -86,25 +89,12 @@ public class Node : MonoBehaviour
         PlayerStats.Money -= turretBlueprint.upgradeCost;
 
         GameObject upgradeEffect;
-
-        if (turret.GetComponent<Turret>().upgradeTurret() == true)
-        {
-            upgradeEffect = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
-            Destroy(upgradeEffect, 5f);
-            return;
-        }
-
-        //Remove the old turret
-        Destroy(turret);
-
-        //Build upgraded version
-        GameObject _turret = Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
-        turret = _turret;
-
-        upgradeEffect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        upgradeEffect = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(upgradeEffect, 5f);
 
-        isFullyUpgraded = true;
+        turretBlueprint.upgradeID++;
+        SetTurretUpgrade();
+        NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
     }
 
     public void SellTurret()
@@ -114,8 +104,7 @@ public class Node : MonoBehaviour
         PlayerStats.Money += turretBlueprint.GetSellValue();
         sellEffect = Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(sellEffect, 5f);
-        Destroy(turret);
-        turretBlueprint = null;
+        RemoveTurret();
     }
 
     void OnMouseEnter()
@@ -142,5 +131,64 @@ public class Node : MonoBehaviour
     void OnMouseExit()
     {
         rend.material.color = startColor;
+    }
+
+    public void AddTurret(int _turretID)
+    {
+        foreach (TurretBlueprint blueprint in shop.blueprints)
+        {
+            if (blueprint.turretID == _turretID)
+            {
+                GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+                turret = _turret;
+                turretBlueprint = blueprint;
+                return;
+            }
+        }
+    }
+
+    public void SetTurretUpgrade()
+    {
+        if (turret.GetComponent<Turret>().upgradeTurret() == true) //If stat upgrade successful
+        {
+            return;
+        }
+
+        //Remove the old turret
+        Destroy(turret);
+
+        //Build upgraded version
+        GameObject _turret = Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        turret = _turret;
+
+
+        isFullyUpgraded = true;
+    }
+
+    public void RemoveTurret()
+    {
+        if (turret == null)
+        {
+            return;
+        }
+        Destroy(turret);
+        turretBlueprint = null;
+        isFullyUpgraded = false;
+        NodeData.ResetIDs(nodeID);
+    }
+
+    public void LoadNode(int turretID, int upgradeID)
+    {
+        if (turretID == -1)
+        {
+            RemoveTurret();
+            return;
+        }
+
+        AddTurret(turretID);
+        for (int i = 0; i < upgradeID; i++)
+        {
+            SetTurretUpgrade();
+        }
     }
 }

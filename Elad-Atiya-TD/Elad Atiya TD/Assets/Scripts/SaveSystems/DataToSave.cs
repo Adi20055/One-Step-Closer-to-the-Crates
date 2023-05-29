@@ -9,6 +9,8 @@ public class DataToSave
     public int currLives;
     public int currMoney;
     public int currRound;
+    public int[] turretIDs;
+    public int[] upgradeIDs;
 
     public DataToSave()
     {
@@ -16,5 +18,14 @@ public class DataToSave
         currLives = PlayerStats.Lives;
         currMoney = PlayerStats.Money;
         currRound = PlayerStats.Rounds;
+
+        turretIDs = new int[NodeData.arraySize];
+        upgradeIDs = new int[NodeData.arraySize];
+
+        for (int i = 0; i < NodeData.arraySize; i++)
+        {
+            turretIDs[i] = NodeData.turretIDs[i];
+            upgradeIDs[i] = NodeData.upgradeIDs[i];
+        }
     }
 }
