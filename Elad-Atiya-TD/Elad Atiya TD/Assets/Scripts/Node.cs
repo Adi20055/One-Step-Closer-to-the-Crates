@@ -12,6 +12,8 @@ public class Node : MonoBehaviour
     [HideInInspector]
     public bool isFullyUpgraded = false;
 
+    public int nodeID;
+
 
     public Vector3 positionOffset;
 
@@ -72,6 +74,8 @@ public class Node : MonoBehaviour
 
         turretBlueprint = blueprint;
 
+        NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
+
         GameObject buildEffect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(buildEffect, 5f);
     }
@@ -86,11 +90,14 @@ public class Node : MonoBehaviour
         PlayerStats.Money -= turretBlueprint.upgradeCost;
 
         GameObject upgradeEffect;
+        upgradeEffect = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(upgradeEffect, 5f);
+
+        turretBlueprint.upgradeID++;
+        NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
 
         if (turret.GetComponent<Turret>().upgradeTurret() == true)
         {
-            upgradeEffect = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
-            Destroy(upgradeEffect, 5f);
             return;
         }
 
@@ -101,8 +108,6 @@ public class Node : MonoBehaviour
         GameObject _turret = Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
-        upgradeEffect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
-        Destroy(upgradeEffect, 5f);
 
         isFullyUpgraded = true;
     }
@@ -116,6 +121,7 @@ public class Node : MonoBehaviour
         Destroy(sellEffect, 5f);
         Destroy(turret);
         turretBlueprint = null;
+        NodeData.ResetIDs(nodeID);
     }
 
     void OnMouseEnter()
