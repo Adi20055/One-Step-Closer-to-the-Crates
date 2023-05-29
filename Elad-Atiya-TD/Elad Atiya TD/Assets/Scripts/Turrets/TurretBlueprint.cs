@@ -19,4 +19,9 @@ public class TurretBlueprint
     {
         return cost / 2;
     }
+
+    public TurretBlueprint()
+    {
+        upgradeID = 0;
+    }
 }

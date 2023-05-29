@@ -40,6 +40,8 @@ public class NodeData : MonoBehaviour
         for (int i = 0; i < arraySize; i++)
         {
             nodes[i].nodeID = i;
+            turretIDs[i] = -1;
+            upgradeIDs[i] = 0;
 
             if (nodes[i].turretBlueprint != null)
             {
@@ -49,8 +51,6 @@ public class NodeData : MonoBehaviour
             else
             {
                 Debug.Log("Node " + i + " Has no turrets");
-                turretIDs[i] = -1;
-                upgradeIDs[i] = 0;
             }
         }
     }
