@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class TurretBlueprint
 {
+    public string name;
     public GameObject prefab;
     public int turretID;
     public int cost;

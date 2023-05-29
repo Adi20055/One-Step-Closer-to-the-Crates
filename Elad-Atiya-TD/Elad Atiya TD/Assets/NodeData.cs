@@ -7,7 +7,7 @@ public class NodeData : MonoBehaviour
     public static int arraySize;
     public static int[] turretIDs;
     public static int[] upgradeIDs;
-    private Node[] node;
+    public Node[] nodes;
 
     void Start()
     {
@@ -15,24 +15,8 @@ public class NodeData : MonoBehaviour
 
         turretIDs = new int[arraySize];
         upgradeIDs = new int[arraySize];
-        node = new Node[arraySize];
-        node = GetComponentsInChildren<Node>();
-
-        for (int i = 0; i < arraySize; i++)
-        {
-            node[i].nodeID = i;
-
-            if (node[i].turretBlueprint != null)
-            {
-                turretIDs[i] = node[i].turretBlueprint.turretID;
-                upgradeIDs[i] = node[i].turretBlueprint.upgradeID;
-            }
-            else
-            {
-                turretIDs[i] = -1;
-                upgradeIDs[i] = 0;
-            }
-        }
+        nodes = new Node[arraySize];
+        nodes = GetComponentsInChildren<Node>();
     }
 
     public static void SetIDs(int turretID, int upgradeID, int index)
@@ -44,5 +28,25 @@ public class NodeData : MonoBehaviour
     {
         turretIDs[index] = -1;
         upgradeIDs[index] = 0;
+    }
+
+    public void UpdateNodeData()
+    {
+        for (int i = 0; i < arraySize; i++)
+        {
+            nodes[i].nodeID = i;
+
+            if (nodes[i].turretBlueprint != null)
+            {
+                turretIDs[i] = nodes[i].turretBlueprint.turretID;
+                upgradeIDs[i] = nodes[i].turretBlueprint.upgradeID;
+            }
+            else
+            {
+                Debug.Log("Node " + i + " Has no turrets");
+                turretIDs[i] = -1;
+                upgradeIDs[i] = 0;
+            }
+        }
     }
 }
