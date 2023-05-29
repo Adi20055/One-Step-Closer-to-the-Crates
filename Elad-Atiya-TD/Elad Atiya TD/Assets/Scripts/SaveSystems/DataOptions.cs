@@ -5,13 +5,14 @@ using UnityEngine;
 public class DataOptions : MonoBehaviour
 {
     public PlayerStats playerStats;
+    public NodeData nodeData;
 
     void Start()
     {
         Load();
     }
 
-    public static void Save()
+    public void Save()
     {
         SaveSystem.SaveData();
     }
@@ -28,12 +29,21 @@ public class DataOptions : MonoBehaviour
         PlayerStats.Money = data.currMoney;
         PlayerStats.Rounds = data.currRound;
         WaveSpawner.LoadWave();
+
+        for (int i = 0; i < nodeData.nodes.Length; i++) //Load nodeData
+        {
+            nodeData.nodes[i].LoadNode(data.turretIDs[i], data.upgradeIDs[i]);
+        }
+
+        nodeData.UpdateNodeData();
+        Save();
     }
-    public static void ResetHighscoreSaveData()
+
+    public void ResetHighscoreSaveData()
     {
         PlayerStats.Highscore = 0;
 
-        SaveSystem.SaveData();
+        Save();
     }
 
     public void ResetSaveData()
@@ -41,7 +51,12 @@ public class DataOptions : MonoBehaviour
         playerStats.resetPlayerStats();
         WaveSpawner.ResetWave();
 
-        SaveSystem.SaveData();
+        for (int i = 0; i < nodeData.nodes.Length; i++) //Reset nodeData
+        {
+            NodeData.ResetIDs(i);
+        }
+
+        Save();
     }
 
     void Update()
