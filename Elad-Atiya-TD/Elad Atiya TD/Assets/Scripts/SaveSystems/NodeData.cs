@@ -34,12 +34,10 @@ public class NodeData : MonoBehaviour
     {
         for (int i = 0; i < arraySize; i++)
         {
-            nodes[i].nodeID = i;
-
             if (nodes[i].turretBlueprint != null)
             {
                 turretIDs[i] = nodes[i].turretBlueprint.turretID;
-                upgradeIDs[i] = nodes[i].turretBlueprint.upgradeID;
+                upgradeIDs[i] = nodes[i].upgradeID;
             }
             else
             {
@@ -47,6 +45,14 @@ public class NodeData : MonoBehaviour
                 turretIDs[i] = 0;
                 upgradeIDs[i] = 0;
             }
+        }
+    }
+
+    public void InitializeNodeID()
+    {
+        for (int i = 0; i < arraySize; i++)
+        {
+            nodes[i].nodeID = i;
         }
     }
 }

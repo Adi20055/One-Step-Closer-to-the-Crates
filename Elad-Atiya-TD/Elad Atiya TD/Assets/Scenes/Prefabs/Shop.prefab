@@ -139,7 +139,7 @@ MonoBehaviour:
     cost: 350
     upgradedPrefab: {fileID: 3045942228388054739, guid: 608c3ebf3b3849942a21b169f919ccd0, type: 3}
     upgradeCost: 250
-    upgradeID: 3
+    upgradeID: 0
 --- !u!114 &440478409437616978
 MonoBehaviour:
   m_ObjectHideFlags: 0

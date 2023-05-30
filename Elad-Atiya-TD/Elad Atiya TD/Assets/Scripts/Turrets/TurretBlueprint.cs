@@ -12,8 +12,6 @@ public class TurretBlueprint
 
     public GameObject upgradedPrefab;
     public int upgradeCost;
-    [HideInInspector]
-    public int upgradeID = 0;
 
     public int GetSellValue()
     {
