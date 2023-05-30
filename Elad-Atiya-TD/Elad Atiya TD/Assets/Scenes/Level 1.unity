@@ -16484,7 +16484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2d4a192a6edb541abba538b61c0d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 1000
+  startMoney: 225
   startLives: 10
 --- !u!114 &1619160999
 MonoBehaviour:
