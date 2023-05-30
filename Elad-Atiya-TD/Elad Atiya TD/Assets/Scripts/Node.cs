@@ -142,6 +142,7 @@ public class Node : MonoBehaviour
                 turret = _turret;
                 turretBlueprint = blueprint;
                 turretBlueprint.upgradeID = 0;
+                NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
                 return;
             }
         }
@@ -181,8 +182,8 @@ public class Node : MonoBehaviour
             return;
         }
         Destroy(turret);
-        turretBlueprint.turretID= -1;
-        turretBlueprint.upgradeID = 0;
+        //turretBlueprint.turretID = 0;
+        //turretBlueprint.upgradeID = 0;
         turretBlueprint = null;
         isFullyUpgraded = false;
         NodeData.ResetIDs(nodeID);
@@ -194,7 +195,7 @@ public class Node : MonoBehaviour
         int storedUpgradeID = upgradeID;
 
         RemoveTurret();
-        if (storedTurretID > 3 || storedTurretID < 1)
+        if (storedTurretID == 0 || storedTurretID == -1)
         {
             return;
         }

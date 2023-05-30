@@ -26,7 +26,7 @@ public class NodeData : MonoBehaviour
     }
     public static void ResetIDs(int index)
     {
-        turretIDs[index] = -1;
+        turretIDs[index] = 0;
         upgradeIDs[index] = 0;
     }
 
@@ -44,7 +44,7 @@ public class NodeData : MonoBehaviour
             else
             {
                 Debug.Log("Node " + i + " Has no turrets");
-                turretIDs[i] = -1;
+                turretIDs[i] = 0;
                 upgradeIDs[i] = 0;
             }
         }

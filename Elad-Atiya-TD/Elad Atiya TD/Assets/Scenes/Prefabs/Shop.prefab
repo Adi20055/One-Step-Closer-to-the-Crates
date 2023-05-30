@@ -13,6 +13,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   associatedFollower: {fileID: 433343413478374526}
+--- !u!114 &440478410648280635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185729853395253473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3361113a6e82646a99bb0f3c1209d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  associatedFollower: {fileID: 433343412310842765}
 --- !u!1 &440478409437616982
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +125,7 @@ MonoBehaviour:
     cost: 100
     upgradedPrefab: {fileID: 8911958536430434865, guid: 12e1d7115ffdba9488995586863d23ec, type: 3}
     upgradeCost: 150
-    upgradeID: 0
+    upgradeID: 3
   - name: Missile Launcher
     prefab: {fileID: 3073941864688184314, guid: bae1a0b83f6d7104180ddee931876310, type: 3}
     turretID: 2
@@ -126,7 +139,7 @@ MonoBehaviour:
     cost: 350
     upgradedPrefab: {fileID: 3045942228388054739, guid: 608c3ebf3b3849942a21b169f919ccd0, type: 3}
     upgradeCost: 250
-    upgradeID: 0
+    upgradeID: 3
 --- !u!114 &440478409437616978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,19 +179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   associatedFollower: {fileID: 4015535286273140396}
---- !u!114 &440478410648280635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185729853395253473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3361113a6e82646a99bb0f3c1209d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  associatedFollower: {fileID: 433343412310842765}
 --- !u!1001 &440478409551998121
 PrefabInstance:
   m_ObjectHideFlags: 0

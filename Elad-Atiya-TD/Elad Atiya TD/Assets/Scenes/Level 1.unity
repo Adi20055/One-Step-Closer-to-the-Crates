@@ -20451,6 +20451,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 440478409437616979, guid: 5d1016dc3984e74478699571932242fd, type: 3}
+      propertyPath: blueprints.Array.data[0].turretID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440478409437616979, guid: 5d1016dc3984e74478699571932242fd, type: 3}
+      propertyPath: blueprints.Array.data[1].turretID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 440478409437616982, guid: 5d1016dc3984e74478699571932242fd, type: 3}
       propertyPath: m_Name
       value: Shop
