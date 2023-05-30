@@ -30,6 +30,8 @@ public class DataOptions : MonoBehaviour
         PlayerStats.Rounds = data.currRound;
         WaveSpawner.LoadWave();
 
+        nodeData.InitializeNodeID();
+
         for (int i = 0; i < nodeData.nodes.Length; i++) //Load nodeData
         {
             nodeData.nodes[i].LoadNode(data.turretIDs[i], data.upgradeIDs[i]);

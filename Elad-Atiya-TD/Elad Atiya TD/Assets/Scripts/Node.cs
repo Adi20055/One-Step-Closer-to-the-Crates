@@ -13,6 +13,7 @@ public class Node : MonoBehaviour
     public bool isFullyUpgraded = false;
 
     public int nodeID;
+    public int upgradeID = 0;
     public Shop shop;
 
     public Vector3 positionOffset;
@@ -72,8 +73,9 @@ public class Node : MonoBehaviour
         GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
         turretBlueprint = blueprint;
+        upgradeID = 0;
 
-        NodeData.SetIDs(turretBlueprint.turretID, 0, nodeID);
+        NodeData.SetIDs(turretBlueprint.turretID, upgradeID, nodeID);
 
         GameObject buildEffect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(buildEffect, 5f);
@@ -93,7 +95,6 @@ public class Node : MonoBehaviour
         Destroy(upgradeEffect, 5f);
 
         TurretUpgradeTrigger();
-        NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
     }
 
     public void SellTurret()
@@ -141,6 +142,8 @@ public class Node : MonoBehaviour
                 GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
                 turret = _turret;
                 turretBlueprint = blueprint;
+                upgradeID = 0;
+                NodeData.SetIDs(turretBlueprint.turretID, upgradeID, nodeID);
                 return;
             }
         }
@@ -153,52 +156,49 @@ public class Node : MonoBehaviour
             return;
         }
 
+        upgradeID++;
+        NodeData.SetIDs(turretBlueprint.turretID, upgradeID, nodeID);
+
+        Debug.Log("Upgraded turret on node " + nodeID + " to lvl: " + upgradeID);
         if (turret.GetComponent<Turret>().upgradeTurret() == true) //If stat upgrade successful
         {
-            turretBlueprint.upgradeID++;
-            NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
-            Debug.Log("Turret on node " + nodeID + " is upgraded to lvl " + turretBlueprint.upgradeID);
             return;
         }
 
         //Remove the old turret
         Destroy(turret);
 
-        //Build upgraded version
+        //Build fully upgraded version
         GameObject _turret = Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
 
-        turretBlueprint.upgradeID++;
-        NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
-        Debug.Log("(Max lvl) Turret on node " + nodeID + " is upgraded to lvl " + turretBlueprint.upgradeID);
         isFullyUpgraded = true;
-        return;
     }
 
     public void RemoveTurret()
     {
-        turretBlueprint.upgradeID = 0;
-        turretBlueprint.turretID = -1;
         if (turret == null)
         {
             return;
         }
         Destroy(turret);
-        NodeData.ResetIDs(nodeID);
+        turretBlueprint.turretID = 0;
+        upgradeID = 0;
         turretBlueprint = null;
         isFullyUpgraded = false;
+        NodeData.ResetIDs(nodeID);
     }
 
     public void LoadNode(int turretID, int upgradeID)
     {
         RemoveTurret();
-        if (turretID == -1)
+        if (turretID == 0 || turretID == -1)
         {
             return;
         }
-        Debug.Log("upgrade to lvl: " + upgradeID);
         AddTurret(turretID);
+
         for (int i = 0; i < upgradeID; i++)
         {
             TurretUpgradeTrigger();

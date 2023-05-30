@@ -12,16 +12,9 @@ public class TurretBlueprint
 
     public GameObject upgradedPrefab;
     public int upgradeCost;
-    [HideInInspector]
-    public int upgradeID;
 
     public int GetSellValue()
     {
         return cost / 2;
-    }
-
-    public TurretBlueprint()
-    {
-        upgradeID = 0;
     }
 }
