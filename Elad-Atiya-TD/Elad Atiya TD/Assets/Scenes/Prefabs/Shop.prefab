@@ -125,21 +125,18 @@ MonoBehaviour:
     cost: 100
     upgradedPrefab: {fileID: 8911958536430434865, guid: 12e1d7115ffdba9488995586863d23ec, type: 3}
     upgradeCost: 150
-    upgradeID: 3
   - name: Missile Launcher
     prefab: {fileID: 3073941864688184314, guid: bae1a0b83f6d7104180ddee931876310, type: 3}
     turretID: 2
     cost: 250
     upgradedPrefab: {fileID: 9212737008869017882, guid: 598007bc222314543b2cd4dd6826306c, type: 3}
     upgradeCost: 200
-    upgradeID: 0
   - name: Laser Beamer
     prefab: {fileID: 6729644331869292360, guid: 97169624e07c47848986901822c9e6e6, type: 3}
     turretID: 3
     cost: 350
     upgradedPrefab: {fileID: 3045942228388054739, guid: 608c3ebf3b3849942a21b169f919ccd0, type: 3}
     upgradeCost: 250
-    upgradeID: 0
 --- !u!114 &440478409437616978
 MonoBehaviour:
   m_ObjectHideFlags: 0
