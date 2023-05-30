@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Turret" Collapsed="true">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAIASJAAIAAIAAACAAAAAAAEAAAAgAgAAAGAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\Turret.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletTurret" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAACAAhAAAAAAAAAAABAAAAAAACAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\BulletTurret.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaserBeamer" Collapsed="true">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAACACAAAEAAAEEAAIAAAAIAAEAAIAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\LaserBeamer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MissileLauncher" Collapsed="true">
+    <Position X="1" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAABAAAAAAAAAAAAAQAAAAAAAgAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\MissileLauncher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StandardTurret" Collapsed="true">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEICEABBAAAAAAAAAAAAAAAgAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\StandardTurret.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

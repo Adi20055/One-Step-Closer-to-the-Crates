@@ -281,6 +281,6 @@ MonoBehaviour:
   RangeUpgradeList: 14000000
   bulletPrefab: {fileID: 1397912504544083682, guid: 3b5ec4076063b784d8874ce9a45b1f92, type: 3}
   damageArrayIndex: 0
-  DamageUpgradeList: 28000000
+  DamageUpgradeList: 32000000
   numberOfShotsArrayIndex: 0
-  NumberOfShotsUpgradeList: 05000000
+  NumberOfShotsUpgradeList: 03000000

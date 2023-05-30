@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAgAAAKAAAAAAAAAAAIRAAAAAgAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Bullets\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Missile" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAIAAAAAAAAAAAgAgAAAAAAAAAgAAEAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Bullets\Missile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletTurret" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAACAAhAAAAAAAAAAABAAAAAAACAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\BulletTurret.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaserBeamer" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAACACAAAEAAAEEAAIAAAAIAAEAAIAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\LaserBeamer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MissileLauncher" Collapsed="true">
+    <Position X="5.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAABAAAAAAAAAAAAAQAAAAAAAgAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\MissileLauncher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StandardTurret" Collapsed="true">
+    <Position X="2.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEICEABBAAAAAAAAAAAAAAAgAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\StandardTurret.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Turret" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAIASJAAIAAIAAACAAAAAAAEAAAAgAgAAAGAAg=</HashCode>
+      <FileName>Assets\Scripts\Turrets\Turret.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

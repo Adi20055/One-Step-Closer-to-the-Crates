@@ -49,14 +49,14 @@ MonoBehaviour:
   enemyTag: Enemy
   partToRotate: {fileID: 7327503181217112579}
   firePoint: {fileID: 257948943845967809}
-  fireRate: 0.5
+  fireRate: 0.4
   fireCountdown: 0
-  RangeUpgradeList: 0a0000000a0000000f000000
+  RangeUpgradeList: 0c0000000f00000011000000
   bulletPrefab: {fileID: 7881283856936809730, guid: 405bf1755969bd445ab905f0bc334c3d, type: 3}
   damageArrayIndex: 0
-  DamageUpgradeList: 190000001e00000023000000
+  DamageUpgradeList: 23000000280000002d000000
   numberOfShotsArrayIndex: 0
-  NumberOfShotsUpgradeList: 010000000200000003000000
+  NumberOfShotsUpgradeList: 010000000100000002000000
 --- !u!1 &1717007766821382331
 GameObject:
   m_ObjectHideFlags: 0
