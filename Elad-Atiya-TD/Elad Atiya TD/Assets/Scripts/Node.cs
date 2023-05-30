@@ -156,6 +156,7 @@ public class Node : MonoBehaviour
         if (turret.GetComponent<Turret>().upgradeTurret() == true) //If stat upgrade successful
         {
             turretBlueprint.upgradeID++;
+            NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
             Debug.Log("Turret on node " + nodeID + " is upgraded to lvl " + turretBlueprint.upgradeID);
             return;
         }
@@ -169,6 +170,7 @@ public class Node : MonoBehaviour
 
 
         turretBlueprint.upgradeID++;
+        NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
         Debug.Log("(Max lvl) Turret on node " + nodeID + " is upgraded to lvl " + turretBlueprint.upgradeID);
         isFullyUpgraded = true;
         return;
@@ -183,9 +185,9 @@ public class Node : MonoBehaviour
             return;
         }
         Destroy(turret);
+        NodeData.ResetIDs(nodeID);
         turretBlueprint = null;
         isFullyUpgraded = false;
-        NodeData.ResetIDs(nodeID);
     }
 
     public void LoadNode(int turretID, int upgradeID)
