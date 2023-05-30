@@ -72,6 +72,7 @@ public class Node : MonoBehaviour
         GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
         turretBlueprint = blueprint;
+        turretBlueprint.upgradeID = 0;
 
         NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
 
@@ -92,9 +93,7 @@ public class Node : MonoBehaviour
         upgradeEffect = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(upgradeEffect, 5f);
 
-        turretBlueprint.upgradeID++;
-        SetTurretUpgrade();
-        NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
+        TurretUpgradeTrigger();
     }
 
     public void SellTurret()
@@ -142,19 +141,23 @@ public class Node : MonoBehaviour
                 GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
                 turret = _turret;
                 turretBlueprint = blueprint;
+                turretBlueprint.upgradeID = 0;
                 return;
             }
         }
     }
 
-    public void SetTurretUpgrade()
+    public void TurretUpgradeTrigger()
     {
         if(isFullyUpgraded)
         {
             return;
         }
 
-        Debug.Log("Upgraded turret on node " + nodeID);
+        turretBlueprint.upgradeID++;
+        NodeData.SetIDs(turretBlueprint.turretID, turretBlueprint.upgradeID, nodeID);
+
+        Debug.Log("Upgraded turret on node " + nodeID + " to lvl: " + turretBlueprint.upgradeID);
         if (turret.GetComponent<Turret>().upgradeTurret() == true) //If stat upgrade successful
         {
             return;
@@ -163,7 +166,7 @@ public class Node : MonoBehaviour
         //Remove the old turret
         Destroy(turret);
 
-        //Build upgraded version
+        //Build fully upgraded version
         GameObject _turret = Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
@@ -178,6 +181,8 @@ public class Node : MonoBehaviour
             return;
         }
         Destroy(turret);
+        turretBlueprint.turretID= -1;
+        turretBlueprint.upgradeID = 0;
         turretBlueprint = null;
         isFullyUpgraded = false;
         NodeData.ResetIDs(nodeID);
@@ -185,16 +190,19 @@ public class Node : MonoBehaviour
 
     public void LoadNode(int turretID, int upgradeID)
     {
-        if (turretID == -1)
+        int storedTurretID = turretID;
+        int storedUpgradeID = upgradeID;
+
+        RemoveTurret();
+        if (storedTurretID > 3 || storedTurretID < 1)
         {
-            RemoveTurret();
             return;
         }
+        AddTurret(storedTurretID);
 
-        AddTurret(turretID);
-        for (int i = 0; i < upgradeID; i++)
+        for (int i = 0; i < (storedUpgradeID); i++)
         {
-            SetTurretUpgrade();
+            TurretUpgradeTrigger();
         }
     }
 }
