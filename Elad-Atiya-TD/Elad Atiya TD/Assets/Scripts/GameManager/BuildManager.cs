@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-    private TurretBlueprint turretToBuild;
+    public TurretBlueprint turretToBuild;
     private Node selectedTurret;
 
     public static BuildManager instance;
@@ -20,6 +20,12 @@ public class BuildManager : MonoBehaviour
             return;
         }
         instance = this;
+    }
+
+    void Start()
+    {
+        DeselectTurret();
+        turretToBuild = null;
     }
 
     public bool CanBuild { get { return turretToBuild != null; } }
