@@ -149,6 +149,12 @@ public class Node : MonoBehaviour
 
     public void SetTurretUpgrade()
     {
+        if(isFullyUpgraded)
+        {
+            return;
+        }
+
+        Debug.Log("Upgraded turret on node " + nodeID);
         if (turret.GetComponent<Turret>().upgradeTurret() == true) //If stat upgrade successful
         {
             return;
