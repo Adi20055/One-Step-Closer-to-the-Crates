@@ -5096,7 +5096,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YOU HAVE WON!!!
+  m_Text: YOU WIN!!!
 --- !u!222 &534457144
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16454,7 +16454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2d4a192a6edb541abba538b61c0d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 100000
+  startMoney: 225
   startLives: 10
 --- !u!114 &1619160999
 MonoBehaviour:
@@ -21961,6 +21961,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1023257517}
     m_Modifications:
+    - target: {fileID: 1703589537801132588, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
+      propertyPath: m_Text
+      value: "\u05D5\u05E0\u05D0\u05D5\u05D1 \u05D9\u05DB\u05D4 \u05E7\u05E9\u05E0\u05D4
+        \u05D0\u05DC\n$125"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703589537801132588, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703589537801132588, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746591248143614206, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
+      propertyPath: m_Text
+      value: "\u05E8\u05D5\u05D0 \u05D9\u05D4\u05D9\u05D5\n$250 (\u05D1\u05D5\u05D8
+        \u05D3\u05D9\u05DE\u05EA \u05D4\u05D6 \u05D9\u05D4\u05D9)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746591248143614206, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746591248908624141, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
+      propertyPath: m_Text
+      value: "\u05DC\u05D9\u05D8\n$350"
+      objectReference: {fileID: 0}
     - target: {fileID: 6485882946107992080, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_Name
       value: Shop
