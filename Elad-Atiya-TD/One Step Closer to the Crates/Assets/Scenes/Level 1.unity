@@ -16394,13 +16394,16 @@ MonoBehaviour:
     count: 7
     rate: 0.8
   - enemy: {fileID: 2229710932364400686, guid: e20591718b0076644b615dee6573214a, type: 3}
-    count: 20
+    count: 15
     rate: 1
   - enemy: {fileID: 2229710932364400686, guid: e20591718b0076644b615dee6573214a, type: 3}
     count: 30
     rate: 1
   - enemy: {fileID: 2229710932364400686, guid: 1356d16de5d8529429188378895b9ccc, type: 3}
     count: 10
+    rate: 1
+  - enemy: {fileID: 2229710932364400686, guid: 1356d16de5d8529429188378895b9ccc, type: 3}
+    count: 25
     rate: 1
   spawnPoint: {fileID: 1975408062}
   waveCountdownText: {fileID: 1759466362}
@@ -18388,7 +18391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.91745, y: 211.92432}
+  m_AnchoredPosition: {x: -6.9174194, y: 211.92432}
   m_SizeDelta: {x: -362.719, y: -447.8703}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1895266477
@@ -22075,6 +22078,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6493367553808592587, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
+      propertyPath: offsetDistance
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6493367555647328056, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
+      propertyPath: offsetDistance
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6813172985955084885, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -22106,6 +22117,10 @@ PrefabInstance:
     - target: {fileID: 6813172986867796902, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7756488267303654890, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
+      propertyPath: offsetDistance
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8013248590511779975, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_AnchorMax.y
