@@ -22084,8 +22084,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1703589537801132588, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_Text
-      value: "\u05D5\u05E0\u05D0\u05D5\u05D1 \u05D9\u05DB\u05D4 \u05E7\u05E9\u05E0\u05D4
-        \u05D0\u05DC\n$125"
+      value: $125 Not the Most Bueno of a Turret
       objectReference: {fileID: 0}
     - target: {fileID: 1703589537801132588, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_FontData.m_MinSize
@@ -22093,12 +22092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1703589537801132588, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2746591248143614206, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_Text
-      value: "\u05E8\u05D5\u05D0 \u05D9\u05D4\u05D9\u05D5\n$250 (\u05D1\u05D5\u05D8
-        \u05D3\u05D9\u05DE\u05EA \u05D4\u05D6 \u05D9\u05D4\u05D9)"
+      value: $250 There Will Be Light (There Will Be is Always Good)
       objectReference: {fileID: 0}
     - target: {fileID: 2746591248143614206, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -22106,7 +22104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2746591248908624141, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_Text
-      value: "\u05DC\u05D9\u05D8\n$350"
+      value: $350 Teal (Missile)
       objectReference: {fileID: 0}
     - target: {fileID: 6485882946107992080, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}
       propertyPath: m_Name
