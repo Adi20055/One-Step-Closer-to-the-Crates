@@ -7,6 +7,7 @@ public abstract class BulletTurret : Turret
     protected int damage = 0;
     [Header("Unity Setup Fields")]
     public GameObject bulletPrefab;
+    public GameObject shootEffect;
     [HideInInspector]
     public int damageArrayIndex = 0;
 
@@ -58,6 +59,8 @@ public abstract class BulletTurret : Turret
         }
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+        GameObject effect = Instantiate(shootEffect, firePoint.position, firePoint.rotation);
+        Destroy(effect, 5f);
 
         if (bullet != null)
         {

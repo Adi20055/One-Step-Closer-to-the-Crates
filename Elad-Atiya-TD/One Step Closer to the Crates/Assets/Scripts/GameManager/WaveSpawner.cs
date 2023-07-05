@@ -47,8 +47,11 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        Wave wave = waves[waveIndex];
         PlayerStats.Rounds = waveIndex;
+
+        Wave wave = waves[waveIndex];
+
+        enemiesAlive = wave.count;
 
         dataOptions.Save(); //automatically save game state
 
@@ -78,6 +81,5 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-        ++enemiesAlive;
     }
 }

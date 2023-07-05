@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522461fb1d09a3c41b0cef4f32940b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeIndicator: {fileID: 0}
   turret: {fileID: 0}
   turretBlueprint:
     name: 
@@ -117,6 +118,7 @@ MonoBehaviour:
     upgradedPrefab: {fileID: 0}
     upgradeCost: 0
   isFullyUpgraded: 0
+  turretRange: 0
   nodeID: 0
   upgradeID: 0
   shop: {fileID: 6485882946107992085, guid: 3d814f1e5b17dfa4dadf8bec4239490a, type: 3}

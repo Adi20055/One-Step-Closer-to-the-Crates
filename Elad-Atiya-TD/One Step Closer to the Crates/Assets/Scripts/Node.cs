@@ -11,6 +11,8 @@ public class Node : MonoBehaviour
     public TurretBlueprint turretBlueprint = null;
     [HideInInspector]
     public bool isFullyUpgraded = false;
+    [HideInInspector]
+    public float turretRange;
 
     public int nodeID;
     public int upgradeID = 0;
@@ -45,7 +47,9 @@ public class Node : MonoBehaviour
 
         if (turret != null)
         {
-            buildManager.SelectTurret(this);
+            turretRange = turret.GetComponent<Turret>().GetRange();
+            Vector3 newRange = new Vector3(turretRange * 2, (float)0.0001, turretRange * 2);
+            buildManager.SelectTurret(this, newRange);
             return;
         }
         else

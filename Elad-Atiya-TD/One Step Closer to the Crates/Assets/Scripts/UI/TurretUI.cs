@@ -11,8 +11,9 @@ public class TurretUI : MonoBehaviour
     public Text sellValue;
 
     public GameObject ui;
+    public GameObject RangeIndicator;
 
-    public void SetTarget(Node _target)
+    public void SetTarget(Node _target, Vector3 range)
     {
         target = _target;
         transform.position = target.GetBuildPosition();
@@ -29,6 +30,7 @@ public class TurretUI : MonoBehaviour
         }
 
         sellValue.text = "$" + target.turretBlueprint.GetSellValue();
+        RangeIndicator.transform.localScale = range;
 
         ui.SetActive(true);
         ImageFollower.DeselectAllImages();

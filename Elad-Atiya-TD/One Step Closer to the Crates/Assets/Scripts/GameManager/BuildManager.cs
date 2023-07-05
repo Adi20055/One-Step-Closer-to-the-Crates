@@ -31,7 +31,7 @@ public class BuildManager : MonoBehaviour
     public bool CanBuild { get { return turretToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
 
-    public void SelectTurret (Node turret)
+    public void SelectTurret (Node turret, Vector3 range)
     {
         if (selectedTurret == turret)
         {
@@ -42,7 +42,7 @@ public class BuildManager : MonoBehaviour
         selectedTurret = turret;
         turretToBuild = null;
 
-        turretUI.SetTarget(turret);
+        turretUI.SetTarget(turret, range);
     }
 
     public void DeselectTurret()

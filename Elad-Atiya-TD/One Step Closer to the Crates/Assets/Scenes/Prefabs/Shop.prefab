@@ -187,9 +187,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1398b3909a9563b4487391e37c7d6b15, type: 3}
+    - target: {fileID: 8848105077764384, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8848105077764388, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: offsetDistance
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 328547916310139976, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_Name
@@ -354,9 +358,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a6072bcf9be0c3646933ea65d31d7f2d, type: 3}
+    - target: {fileID: 8848105077764384, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8848105077764388, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: offsetDistance
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 328547916310139976, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_Name
@@ -526,9 +534,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6485882946107992081}
     m_Modifications:
+    - target: {fileID: 8848105077764384, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8848105077764388, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: offsetDistance
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 328547916310139976, guid: a3fb041477a9ca6459d71a677ce0f561, type: 3}
       propertyPath: m_Name

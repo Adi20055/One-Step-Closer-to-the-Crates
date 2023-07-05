@@ -10066,7 +10066,7 @@ MonoBehaviour:
   impactEffect: {fileID: 2252306907940042063}
   impactLight: {fileID: 948610010888468950}
   laserParticleOffset: 0
-  DamageOverTimeUpgradeList: 280000002d00000032000000
+  DamageOverTimeUpgradeList: 1e0000002300000028000000
   slowPct: 0.3
 --- !u!1 &7985892850247779197
 GameObject:

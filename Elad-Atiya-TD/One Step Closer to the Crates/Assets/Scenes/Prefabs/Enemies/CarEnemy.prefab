@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3854466898922763457}
   - component: {fileID: 1303051886269599901}
   - component: {fileID: 3716363570448895075}
-  - component: {fileID: 2101106531892127956}
   m_Layer: 5
   m_Name: EnemyUI
   m_TagString: Untagged
@@ -83,23 +82,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &2101106531892127956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415394915469929459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &904196583108667257
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +348,6 @@ GameObject:
   - component: {fileID: 3565963040483141999}
   - component: {fileID: 6312383930725131984}
   - component: {fileID: 4839675275340190238}
-  - component: {fileID: 7621295088637598606}
   m_Layer: 0
   m_Name: FrontCarLogo
   m_TagString: Untagged
@@ -438,23 +419,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &7621295088637598606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2294523431708204013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &2536381099514152018
 GameObject:
   m_ObjectHideFlags: 0

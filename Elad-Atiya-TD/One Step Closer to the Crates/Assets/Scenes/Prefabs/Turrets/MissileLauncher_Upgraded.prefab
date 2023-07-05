@@ -279,7 +279,8 @@ MonoBehaviour:
   fireCountdown: 0
   RangeUpgradeList: 1e000000
   bulletPrefab: {fileID: 2707448473623226287, guid: c31dfaf1866003546a8a11d69598031a, type: 3}
+  shootEffect: {fileID: 691131763284350995, guid: d9223ffeebf4c2842aef507145bee320, type: 3}
   damageArrayIndex: 0
-  DamageUpgradeList: 32000000
+  DamageUpgradeList: 46000000
   explosionRadiusArrayIndex: 0
   ExplosionRadiusUpgradeList: 0a000000
